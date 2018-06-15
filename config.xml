@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns:tizen="http://tizen.org/ns/widgets" xmlns="http://www.w3.org/ns/widgets" id="http://yourdomain/test0" version="1.0.0" viewmodes="maximized">
-    <tizen:application id="pyHZJDSuhM.test0" package="pyHZJDSuhM" required_version="3.0"/>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://yourdomain/MyProject" version="1.0.0" viewmodes="maximized">
+    <access origin="*" subdomains="true"/>
+    <tizen:application id="AexS7E52iI.MyProject" package="AexS7E52iI" required_version="3.0"/>
     <content src="index.html"/>
     <feature name="http://tizen.org/feature/screen.size.all"/>
-    <icon src="icon.png"/>
-    <name>test0</name>
+    <icon src="clTKXrvoFWTv24yumGxS7Qi5W4uA6a9MZCNZmTu9dmqi5dIvr3WUPmSnEJOj.png"/>
+    <name>MyProject</name>
+    <tizen:privilege name="http://tizen.org/privilege/internet"/>
     <tizen:profile name="mobile"/>
 </widget>

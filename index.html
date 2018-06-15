@@ -1,67 +1,106 @@
 <html>
+
 <head>
     <meta charset="UTF-8">
-    <link type="text/css" rel="stylesheet"
-          href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
     <script src="js/main.js" async></script>
     <title>Sauna Dashboard</title>
 </head>
+
 <body>
-<div id="header">
-    <img src="icon.png">Dashboard
-</div>
-<div id="dashboard">
-	<div class="room-tile">
-		<p>Room 1</p>
-	</div>
-	<div class="room-tile"style="background-color: #7abd53;">
-		<p>Room 2</p>
-	</div>
-	<div class="room-tile" style="background-color: #ec5341;">
-		<p>Room 3</p>
-	</div>
-	<div class="room-tile">
-		<p>Room 4</p>
-	</div>
-	<div class="room-tile">
-		<p>Room 5</p>
-	</div>
-	<div class="room-tile" style="background-color: #7abd53;">
-		<p>Room 6</p>
-	</div>
-	<div class="room-tile">
-		<p>Room 7</p>
-	</div>
-	<div class="room-tile"style="background-color: #7abd53;">
-		<p>Room 8</p>
-	</div>
-	<div class="room-tile"style="background-color: #7abd53;">
-		<p>Room 9</p>
-	</div>
-</div>
-<div id="footer">
-   <a href="http://dimini.readthedocs.io/">Help</a> <a href="https://getsatisfaction.com/dimini">Support</a> <a href="javascript:void(0)" onclick="return showModal('about-info')">About</a>
-</div>
-<div id="about-info" class="modal" onclick="hideModal('about-info'); return false;">
-  <span class="close" title="Close window">&times;</span>
-    <div id="centered-list" removeListener>
-			<div>
-				<p>Sauna management app</p>
-				<p>
-					<strong>Product version: </strong>0.0.0.4 build 20180612201600
-				</p>
-				<p>
-					<strong>Development: </strong>Ippolitov&nbsp;Ivan, Petrovicheva&nbsp;Svetlana, Yaskovich&nbsp;Dmitry
-				</p>
-				<p>
-					<strong>Special thanks: </strong><a href="https://iot-academy.ru">Samsung&nbsp;IoT&nbsp;Academy</a>
-				</p>
-				
-				<p>
-					©<a href="https://dimini.tk">Dimini Inc.</a>, 2018
-				</p>
-			</div>
-  </div>
-</div>
+
+    <div id="header">
+        <img src="icon.png">Dashboard
+    </div>
+
+    <div id="dashboard">
+        <a href="javascript:void(0)" onclick="return showModal('room-info')">
+            <div id="Room1" class="room-tile">
+                <p>Room 1</p>
+            </div>
+        </a>
+        <div class="room-tile" style="background-color: #7abd53;">
+            <p>Room 2</p>
+        </div>
+        <div class="room-tile" style="background-color: #ec5341;">
+            <p>Room 3</p>
+        </div>
+        <div class="room-tile">
+            <p>Room 4</p>
+        </div>
+        <div class="room-tile">
+            <p>Room 5</p>
+        </div>
+        <div class="room-tile" style="background-color: #7abd53;">
+            <p>Room 6</p>
+        </div>
+        <div class="room-tile">
+            <p>Room 7</p>
+        </div>
+        <div class="room-tile" style="background-color: #7abd53;">
+            <p>Room 8</p>
+        </div>
+        <div class="room-tile" style="background-color: #7abd53;">
+            <p>Room 9</p>
+        </div>
+    </div>
+
+    <div id="footer">
+        <a href="http://dimini.readthedocs.io/">Help</a>  <a href="https://getsatisfaction.com/dimini">Support</a>  <a href="javascript:void(0)" onclick="return showModal('about-info')">About</a>
+    </div>
+
+    <div id="about-info" class="modal" onclick="hideModal('about-info'); return false;">
+        <span class="close" title="Close window">&times;</span>
+        <div id="centered-list" removeListener>
+            <div>
+                <p>Sauna management app</p>
+                <p>
+                    <strong>Product version: </strong>0.0.0.4 build 20180612201600
+                </p>
+                <p>
+                    <strong>Development: </strong>Ippolitov&nbsp;Ivan, Petrovicheva&nbsp;Svetlana, Yaskovich&nbsp;Dmitry
+                </p>
+                <p>
+                    <strong>Special thanks: </strong><a href="https://iot-academy.ru">Samsung&nbsp;IoT&nbsp;Academy</a>
+                </p>
+
+                <p>
+                    ©<a href="https://dimini.tk">Dimini Inc.</a>, 2018
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="room-info" class="modal" onclick="hideModal('room-info'); return false;">
+        <span class="close" title="Close window">&times;</span>
+        <div id="centered-list" removeListener>
+            <div>
+
+                <label class="switch">
+                    <input type="checkbox" id="checkbox_room_1" onchange="termsChecked()">
+                    <span class="slider round"></span>
+                </label>
+
+                <table id="MyTable">
+                    <thead>
+                        <tr>
+                            <th>Temperature</th>
+                            <th>Humidity</th>
+                            <th>Motion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
 </body>
+
 </html>
