@@ -1,6 +1,6 @@
 window.onload = function() {
-	termsChecked();
-	startConnection();
+    termsChecked();
+    startConnection();
 
     document.addEventListener('tizenhwkey', function(e) {
         if (e.keyName === "back") {
@@ -12,18 +12,17 @@ window.onload = function() {
 };
 
 window.onunload = function() {
-	client.disconnect();
+    client.disconnect();
 }
 
-function open_door()
-{
-var msgtext = "set ****	";
+function open_door() {
+    var msgtext = "set ****	";
 
-message = new Paho.MQTT.Message(msgtext);
+    message = new Paho.MQTT.Message(msgtext);
 
-message.destinationName = "devices/lora/807B859020000220/gpio";
+    message.destinationName = "devices/lora/807B859020000220/gpio";
 
-client.send(message);
+    client.send(message);
 }
 
 var client;
@@ -40,64 +39,63 @@ function startConnection() {
 
     client.onMessageArrived = onMessageArrived;
 
-    client.connect({onSuccess:onConnect});    
+    client.connect({
+        onSuccess: onConnect
+    });
 
 }
 
 function onConnect() {
 
-  // Once a connection has been made, make a subscription.
+    // Once a connection has been made, make a subscription.
 
-  console.log("onConnect");
+    console.log("onConnect");
 
-  //client.subscribe("devices/lora/807B859020000220/gpio");
-  client.subscribe("devices/lora/#");
-  
+    //client.subscribe("devices/lora/807B859020000220/gpio");
+    client.subscribe("devices/lora/#");
+
 
 };
 
 function onConnectionLost(responseObject) {
 
-  if (responseObject.errorCode !== 0)
+    if (responseObject.errorCode !== 0)
 
-    console.log("onConnectionLost:"+responseObject.errorMessage);
+        console.log("onConnectionLost:" + responseObject.errorMessage);
 
 };
 
 function onMessageArrived(message) {
-	 var msg = message.payloadString;
-  JSON.parse(msg);
-  
+    var msg = message.payloadString;
+    JSON.parse(msg);
+
 
 };
 
-function showModal(id)
-{
-	document.getElementById(id).style.display = 'block';
+function showModal(id) {
+    document.getElementById(id).style.display = 'block';
 }
 
-function hideModal(id) 
+function hideModal(id)
 
 {
     document.getElementById(id).style.display = 'none';
-    id.stopPropagation();
 }
 
-function colourChange()
-{
-	document.getElementById("Room1").style.backgroundColor = '#ddd';
-	}
+function colourChange() {
+    document.getElementById("Room1").style.backgroundColor = '#ddd';
+}
 
 function termsChecked() {
-	
+
     var chk = document.getElementById('checkbox_room_1');
     if (chk.checked) {
-    	document.getElementById("Room1").style.backgroundColor = '#7abd53';
+        document.getElementById("Room1").style.backgroundColor = '#7abd53';
     } else {
-    	document.getElementById("Room1").style.backgroundColor = '#ddd';
+        document.getElementById("Room1").style.backgroundColor = '#ddd';
     }
 }
 
 function stopBubble(event) {
-	    event.stopPropagation();
-	}
+    event.stopPropagation();
+}
