@@ -1,5 +1,9 @@
 window.onload = function() {
-    termsChecked();
+	var i;
+	for (i = 1; i < 10; i++) { 
+		termsChecked(i);
+	}
+    
     startConnection();
 
     document.addEventListener('tizenhwkey', function(e) {
@@ -82,17 +86,29 @@ function hideModal(id)
     document.getElementById(id).style.display = 'none';
 }
 
+function showRoomModal(id, room) {
+    document.getElementById(id).style.display = 'block';
+    document.getElementById(room).style.display = 'block';
+    document.getElementById("room-info").setAttribute("onclick", "hideRoomModal('room-info','"+room+"'); return false;");
+}
+
+function hideRoomModal(id,room)
+
+{
+    document.getElementById(id).style.display = 'none';
+    document.getElementById(room).style.display = 'none';
+}
+
 function colorChange() {
     document.getElementById("room1").style.backgroundColor = '#ddd';
 }
 
-function termsChecked() {
-
-    var chk = document.getElementById('checkbox_room_1');
+function termsChecked(roomID) {
+    var chk = document.getElementById('checkbox-room-'+roomID);
     if (chk.checked) {
-        document.getElementById("room1").style.backgroundColor = '#7abd53';
+        document.getElementById("room"+roomID).style.backgroundColor = '#7abd53';
     } else {
-        document.getElementById("room1").style.backgroundColor = '#ddd';
+        document.getElementById("room"+roomID).style.backgroundColor = '#ddd';
     }
 }
 

@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link type="text/css" rel="stylesheet" href="css/style.css">
     <script src="js/main.js" async></script>
-	<link rel="icon" type="image/png" href="icon.png">
+    <link rel="icon" type="image/png" href="icon.png">
     <title>Sauna Dashboard</title>
-	<meta name="description" content="Sauna management system dashboard"> 
+    <meta name="description" content="Sauna management system dashboard">
 </head>
 
 <body>
@@ -17,36 +17,50 @@
     </div>
 
     <div id="dashboard">
-        <a href="javascript:void(0)" onclick="return showModal('room-info')">
+        <a href="javascript:void(0)" onclick="return showRoomModal('room-info','toggle-room-1')">
             <div id="room1" class="room-tile">
                 <p>Room 1</p>
             </div>
         </a>
-        <div class="room-tile" style="background-color: #7abd53;">
-            <p>Room 2</p>
-        </div>
-        <div class="room-tile" style="background-color: #ec5341;">
-            <p>Room 3</p>
-        </div>
-        <div class="room-tile">
-            <p>Room 4</p>
-        </div>
-        <div class="room-tile">
-            <p>Room 5</p>
-        </div>
-        <div class="room-tile" style="background-color: #7abd53;">
-            <p>Room 6</p>
-        </div>
-        <div class="room-tile">
-            <p>Room 7</p>
-        </div>
-        <div class="room-tile" style="background-color: #7abd53;">
-            <p>Room 8</p>
-        </div>
-        <a href="javascript:void(0)" onclick="return showModal('room-info')">
-	        <div id="room9" class="room-tile">
-	            <p>Room 9</p>
-	        </div>
+        <a href="javascript:void(0)" onclick="return showRoomModal('room-info','toggle-room-2')">
+            <div id="room2" class="room-tile">
+                <p>Room 2</p>
+            </div>
+        </a>
+        <a href="javascript:void(0)" onclick="return showRoomModal('room-info','toggle-room-3')">
+            <div id="room3" class="room-tile">
+                <p>Room 3</p>
+            </div>
+        </a>
+        <a href="javascript:void(0)" onclick="return showRoomModal('room-info','toggle-room-4')">
+            <div id="room4" class="room-tile">
+                <p>Room 4</p>
+            </div>
+        </a>
+        <a href="javascript:void(0)" onclick="return showRoomModal('room-info','toggle-room-5')">
+            <div id="room5" class="room-tile">
+                <p>Room 5</p>
+            </div>
+        </a>
+        <a href="javascript:void(0)" onclick="return showRoomModal('room-info','toggle-room-6')">
+            <div id="room6" class="room-tile">
+                <p>Room 6</p>
+            </div>
+        </a>
+        <a href="javascript:void(0)" onclick="return showRoomModal('room-info','toggle-room-7')">
+            <div id="room7" class="room-tile">
+                <p>Room 7</p>
+            </div>
+        </a>
+        <a href="javascript:void(0)" onclick="return showRoomModal('room-info','toggle-room-8')">
+            <div id="room8" class="room-tile">
+                <p>Room 8</p>
+            </div>
+        </a>
+        <a href="javascript:void(0)" onclick="return showRoomModal('room-info','toggle-room-9')">
+            <div id="room9" class="room-tile">
+                <p>Room 9</p>
+            </div>
         </a>
     </div>
 
@@ -78,13 +92,62 @@
 
     <div id="room-info" class="modal" onclick="hideModal('room-info'); return false;">
         <span class="close" title="Close window">&times;</span>
-        <div id="centered-list"  onclick="stopBubble(event)">
+        <div id="centered-list" onclick="stopBubble(event)">
             <div>
-
-                <label class="switch">
-                    <input type="checkbox" id="checkbox_room_1" onchange="termsChecked()">
-                    <span class="slider round"></span>
-                </label>
+                <div id="toggle-room-1" class="toggle-room">
+                    <label class="switch">
+                        <input type="checkbox" id="checkbox-room-1" onchange="termsChecked(1)">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div id="toggle-room-2" class="toggle-room">
+                    <label class="switch">
+                        <input type="checkbox" id="checkbox-room-2" onchange="termsChecked(2)">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div id="toggle-room-3" class="toggle-room">
+                    <label class="switch">
+                        <input type="checkbox" id="checkbox-room-3" onchange="termsChecked(3)">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div id="toggle-room-4" class="toggle-room">
+                    <label class="switch">
+                        <input type="checkbox" id="checkbox-room-4" onchange="termsChecked(4)">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div id="toggle-room-5" class="toggle-room">
+                    <label class="switch">
+                        <input type="checkbox" id="checkbox-room-5" onchange="termsChecked(5)">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div id="toggle-room-6" class="toggle-room">
+                    <label class="switch">
+                        <input type="checkbox" id="checkbox-room-6" onchange="termsChecked(6)">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div id="toggle-room-7" class="toggle-room">
+                    <label class="switch">
+                        <input type="checkbox" id="checkbox-room-7" onchange="termsChecked(7)">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div id="toggle-room-8" class="toggle-room">
+                    <label class="switch">
+                        <input type="checkbox" id="checkbox-room-8" onchange="termsChecked(8)">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div id="toggle-room-9" class="toggle-room">
+                    <label class="switch">
+                        <input type="checkbox" id="checkbox-room-9" onchange="termsChecked(9)">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
 
                 <table id="MyTable">
                     <thead>

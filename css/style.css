@@ -276,10 +276,15 @@ input:checked + .slider:before {
 	text-decoration: none;
 }
 
+.toggle-room{
+	display:none;
+}
+
 #MyTable{
 	text-align: center;
 	margin: 0 auto;
 	border-collapse: collapse;
+	font-size:60%;
 	}
 	
 	#MyTable td{
