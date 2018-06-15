@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://yourdomain/MyProject" version="1.0.0" viewmodes="maximized">
-    <access origin="*" subdomains="true"/>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://dimini.tk/sauna" version="0.0.1" viewmodes="maximized">
+    <access origin="*" subdomains="true"></access>
     <tizen:application id="AexS7E52iI.MyProject" package="AexS7E52iI" required_version="3.0"/>
+    <author href="https://dimini.tk" email="info@dimini.tk">Dimini Inc.</author>
     <content src="index.html"/>
     <feature name="http://tizen.org/feature/screen.size.all"/>
-    <icon src="clTKXrvoFWTv24yumGxS7Qi5W4uA6a9MZCNZmTu9dmqi5dIvr3WUPmSnEJOj.png"/>
-    <name>MyProject</name>
+    <icon src="icon.png"/>
+    <name>Sauna</name>
     <tizen:privilege name="http://tizen.org/privilege/internet"/>
     <tizen:profile name="mobile"/>
+    <tizen:setting screen-orientation="portrait" context-menu="disable" background-support="disable" encryption="disable" install-location="auto" hwkey-event="enable"/>
 </widget>

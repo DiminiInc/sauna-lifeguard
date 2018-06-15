@@ -82,17 +82,17 @@ function hideModal(id)
     document.getElementById(id).style.display = 'none';
 }
 
-function colourChange() {
-    document.getElementById("Room1").style.backgroundColor = '#ddd';
+function colorChange() {
+    document.getElementById("room1").style.backgroundColor = '#ddd';
 }
 
 function termsChecked() {
 
     var chk = document.getElementById('checkbox_room_1');
     if (chk.checked) {
-        document.getElementById("Room1").style.backgroundColor = '#7abd53';
+        document.getElementById("room1").style.backgroundColor = '#7abd53';
     } else {
-        document.getElementById("Room1").style.backgroundColor = '#ddd';
+        document.getElementById("room1").style.backgroundColor = '#ddd';
     }
 }
 
