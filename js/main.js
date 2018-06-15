@@ -89,6 +89,7 @@ function colourChange()
 	}
 
 function termsChecked() {
+	
     var chk = document.getElementById('checkbox_room_1');
     if (chk.checked) {
     	document.getElementById("Room1").style.backgroundColor = '#7abd53';
@@ -96,3 +97,7 @@ function termsChecked() {
     	document.getElementById("Room1").style.backgroundColor = '#ddd';
     }
 }
+
+function stopBubble(event) {
+	    event.stopPropagation();
+	}
