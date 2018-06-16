@@ -3,6 +3,7 @@ html
 	text-align: center;
 	background-color:#eee;
 	font-size: 175%;
+	height:100%;
 }
 
 span{
@@ -21,6 +22,7 @@ span{
 
 #footer{
 	font-size: 100%;
+	flex-shrink:0;
 }
 
 
@@ -29,6 +31,9 @@ body
 {
 	margin:0px;
 	padding:0px;
+	height:100%;
+	display:flex;
+	flex-direction:column;
 }
 
 #header body,#header div,#header dl,#header dt,#header dd,#header ul,#header ol,#header li,#header h1,#header h2,#header h3,#header h4,#header h5,#header h6,#header pre,#header form,#header fieldset,#header input,#header textarea,#header p,#header blockquote,#header th,#header td
@@ -209,6 +214,8 @@ body
 	margin:2px;
 	border-style: solid;
     border-width: 3px;
+    width:25%;
+    min-width: 85px;
 }
 
 .switch {
@@ -269,6 +276,10 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+#dashboard{
+	flex:1 0 auto;
 }
 
 #dashboard a{
