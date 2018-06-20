@@ -290,7 +290,9 @@ input:checked + .slider:before {
 .toggle-room{
 	display:none;
 }
+
 .Room_Table{
+	display:none;
 	text-align: center;
 	margin: 0 auto;
 	border-collapse: collapse;

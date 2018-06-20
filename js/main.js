@@ -112,7 +112,8 @@ function hideModal(id)
 
 function showRoomModal(id, room) {
     document.getElementById(id).style.display = 'block';
-    document.getElementById(room).style.display = 'block';
+    document.getElementById("toggle-room-"+room).style.display = 'block';
+    document.getElementById("Table-"+room).style.display = 'block';
     document.getElementById("room-info").setAttribute("onclick", "hideRoomModal('room-info','" + room + "'); return false;");
 }
 
@@ -120,7 +121,8 @@ function hideRoomModal(id, room)
 
 {
     document.getElementById(id).style.display = 'none';
-    document.getElementById(room).style.display = 'none';
+    document.getElementById("toggle-room-"+room).style.display = 'none';
+    document.getElementById("Table-"+room).style.display = 'none';
 }
 
 function colorChange() {
