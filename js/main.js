@@ -19,17 +19,6 @@ window.onunload = function() {
     client.disconnect();
 };
 
-function open_door() {
-    var msgtext = "gpio get 24";
-
-    message = new Paho.MQTT.Message(msgtext);
-
-    message.destinationName = "devices/lora/807B859020000258/gpio";
-
-    client.send(message);
-   //alert(msgtext);
-}
-
 var client;
 
 var message;
@@ -71,32 +60,107 @@ function onConnectionLost(responseObject) {
 };
 
 function onMessageArrived(message) {	
-	
+    //var motion = ' ';
+    //var temperature = ' ';
+    //var humidity = ' ';
+
     var msg = message.payloadString;
-    //alert(msg)
     var obj = JSON.parse(msg);
     var devEUI = obj.status.devEUI;
-    alert(msg);
+
+    //alert(msg);
+
     if (devEUI == "807B859020000258") {
         var chk = document.getElementById('checkbox-room-1');
-
         if (chk.checked) {
-        	//open_door();
-        	var motion = 'true';
-        	var temperature = 'true';
-        	var humidity = 'true';
-        	
-            motion = obj.data.value;
-            temperature = obj.data.temperature;
-            humidity = obj.data.humidity;
-            alert("hum = " + humidity);
-            document.getElementById("1-1-1").innerHTML = temperature;
-            document.getElementById("1-1-2").innerHTML = humidity;
-            document.getElementById("1-1-3").innerHTML = motion;
-           
+            WorkWithData(obj, devEUI, 1);
+        }
+    } else if (devEUI == "***") {
+        var chk = document.getElementById('checkbox-room-2');
+        if (chk.checked) {
+            WorkWithData(obj, devEUI, 2);
+        }
+    } else if (devEUI == "***") {
+        var chk = document.getElementById('checkbox-room-3');
+        if (chk.checked) {
+            WorkWithData(obj, devEUI, 3);
         }
     }
         
+}
+
+function WorkWithData(obj, devEUI, numRoom) {
+    //var temperature = ' ';
+    //var humidity = ' ';
+    //var motion = ' ';
+
+    var temperature = obj.data.temperature;
+    var humidity = obj.data.humidity;
+    var motion = obj.data.value;
+    if(motion = "1") motion = "Yes" 
+    else motion = "No";
+
+    if (temperature != undefined) {
+        document.getElementById(numRoom + "-3-1").innerHTML = document.getElementById(numRoom + "-2-1").innerHTML;
+        document.getElementById(numRoom + "-2-1").innerHTML = document.getElementById(numRoom + "-1-1").innerHTML;
+        document.getElementById(numRoom + "-1-1").innerHTML = temperature;
+
+        document.getElementById(numRoom + "-3-2").innerHTML = document.getElementById(numRoom + "-2-2").innerHTML;
+        document.getElementById(numRoom + "-2-2").innerHTML = document.getElementById(numRoom + "-1-2").innerHTML;
+        document.getElementById(numRoom + "-1-2").innerHTML = humidity;
+
+        GpioGet24(devEUI);
+
+        if (temperature > 120) {
+            document.getElementById("room" + numRoom).style.backgroundColor = '#ec5341';
+            alert("Temperature in room " + numRoom + " is too hight!");
+        }
+    }
+
+    if (motion != undefined) {
+        document.getElementById(numRoom + "-3-3").innerHTML = document.getElementById(numRoom + "-2-3").innerHTML;
+        document.getElementById(numRoom + "-2-3").innerHTML = document.getElementById(numRoom + "-1-3").innerHTML;
+        document.getElementById(numRoom + "-1-3").innerHTML = motion;
+
+        if (document.getElementById(numRoom + "-1-3").innerHTML = "No"
+            && document.getElementById(numRoom + "-2-3").innerHTML == "No"
+            && document.getElementById(numRoom + "-3-3").innerHTML == "No") {
+            document.getElementById("room" + numRoom).style.backgroundColor = '#ec5341';
+            GpioSet251(devEUI);
+            alert("There is no motion in room " + numRoom + " for a long period!");
+        }
+
+        if (document.getElementById(numRoom + "-1-3").innerHTML = "No"
+            && document.getElementById(numRoom + "-2-3").innerHTML == "No") {
+            GpioSet251(devEUI);
+            GpioGet24(devEUI);
+        }
+    }
+}
+
+//make sound
+function GpioGet24(devEUI) {
+    var msgtext = "gpio get 24";
+
+    message = new Paho.MQTT.Message(msgtext);
+
+   // message.destinationName = "devices/lora/807B859020000258/gpio";
+    message.destinationName = "devices/lora/"+ devEUI +"/gpio";
+    client.send(message);
+    
+}
+
+//get motion
+function GpioSet251(devEUI) {
+    var msgtext = "gpio set 25 1";
+
+    message = new Paho.MQTT.Message(msgtext);
+
+    // message.destinationName = "devices/lora/807B859020000258/gpio";
+    message.destinationName = "devices/lora/" + devEUI + "/gpio";
+    client.send(message);
+
+}      
 }
 
 
