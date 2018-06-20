@@ -64,7 +64,8 @@
     </div>
 
     <div id="footer">
-        <a href="http://dimini.readthedocs.io/">Help</a>  <a href="https://getsatisfaction.com/dimini">Support</a>  <a href="javascript:void(0)" onclick="return showModal('about-info')">About</a>
+        <a href="http://dimini.readthedocs.io/">Help</a>  <a href="mailto:support@dimini.tk">Support</a>  
+        <a href="javascript:void(0)" onclick="return showModal('about-info')">About</a> <a href="javascript:void(0)" onclick="try {tizen.application.getCurrentApplication().exit();} catch (ignore) {}">Exit</a>
     </div>
 
     <div id="about-info" class="modal" onclick="hideModal('about-info'); return false;">
@@ -73,7 +74,7 @@
             <div>
                 <p>Sauna management app</p>
                 <p>
-                    <strong>Product version: </strong>0.0.1.0 build 20180615174500
+                    <strong>Product version: </strong>0.1.0.0 build 20180620210000
                 </p>
                 <p>
                     <strong>Development: </strong>Ippolitov&nbsp;Ivan, Petrovicheva&nbsp;Svetlana, Yaskovich&nbsp;Dmitry
@@ -88,7 +89,6 @@
             </div>
         </div>
     </div>
-    <p>hi</p>
     <div id="room-info" class="modal" onclick="hideModal('room-info'); return false;">
         <span class="close" title="Close window">&times;</span>
         <div id="centered-list" onclick="stopBubble(event)">
