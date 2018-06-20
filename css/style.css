@@ -290,17 +290,15 @@ input:checked + .slider:before {
 .toggle-room{
 	display:none;
 }
-
-#MyTable{
+.Room_Table{
 	text-align: center;
 	margin: 0 auto;
 	border-collapse: collapse;
 	font-size:60%;
 	}
 	
-	#MyTable td{
+	.Room_Table td{
 	border: black 2px solid;
 	width: 100px
 	
 	}
-}
