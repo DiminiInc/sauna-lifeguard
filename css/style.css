@@ -299,7 +299,7 @@ input:checked + .slider:before {
 	font-size:60%;
 	}
 	
-	.Room_Table td{
+.Room_Table td{
 	border: black 2px solid;
 	width: 100px
 	
