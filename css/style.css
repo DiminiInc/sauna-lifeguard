@@ -2,7 +2,7 @@ html
 {
 	text-align: center;
 	background-color:#eee;
-	font-size: 175%;
+	font-size: 170%;
 	height:100%;
 }
 
@@ -12,7 +12,7 @@ span{
 }
 
 #header{
-	font-size: 225%;
+	font-size: 210%;
 	font-weight:bold;
 }
 #header img{
