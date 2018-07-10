@@ -154,26 +154,28 @@ function GpioSet251(devEUI) {
 
 
 function showModal(id) {
-    document.getElementById(id).style.display = 'block';
+    document.getElementById(id).style.visibility = 'visible';
+    document.getElementById(id).style.opacity = '1';
 }
 
 function hideModal(id)
-
 {
-    document.getElementById(id).style.display = 'none';
+    document.getElementById(id).style.visibility = 'hidden';
+    document.getElementById(id).style.opacity = '0';
 }
 
 function showRoomModal(id, room) {
-    document.getElementById(id).style.display = 'block';
+	document.getElementById(id).style.visibility = 'visible';
+    document.getElementById(id).style.opacity = '1';
     document.getElementById("toggle-room-" + room).style.display = 'block';
     document.getElementById("Table-" + room).style.display = 'table';
     document.getElementById("room-info").setAttribute("onclick", "hideRoomModal('room-info','" + room + "'); return false;");
 }
 
 function hideRoomModal(id, room)
-
 {
-    document.getElementById(id).style.display = 'none';
+    document.getElementById(id).style.visibility = 'hidden';
+    document.getElementById(id).style.opacity = '0';
     document.getElementById("toggle-room-" + room).style.display = 'none';
     document.getElementById("Table-" + room).style.display = 'none';
 }
